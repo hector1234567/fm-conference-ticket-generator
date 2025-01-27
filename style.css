@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Inconsolata';
+  src: url(assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf);
+}
+
+:root {
+  --Neutral-0: hsl(0, 0%, 100%);
+  --Neutral-300: hsl(252, 6%, 83%);
+  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-900: hsl(248, 70%, 10%);
+
+  --Orange-500: hsl(7, 88%, 67%);
+  --Orange-700: hsl(7, 71%, 60%);
+
+  --Gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+
+  
+  --White-transparent: hsla(0, 0%, 100%, 8%);
+
+  --Extrabold: 700;
+  --Medium: 400;
+  --Regular: 300;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Inconsolata', sans-serif;
+  font-size: 2rem;
+  color: var(--Neutral-300);
+  background-color: var(--Neutral-900);
+  background-image: url(assets/images/pattern-squiggly-line-bottom-desktop.svg), url(assets/images/pattern-squiggly-line-top.svg), url(assets/images/background-desktop.png);
+  background-size:  auto, auto, cover;
+  background-repeat: no-repeat;
+  background-position: left bottom, right top 13%, center ;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
+
+.header {
+  margin-bottom: 6rem;
+}
+
+.main {
+  max-width: 89.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  color: var(--Neutral-0);
+  font-size: 6rem;
+  line-height: 110%;
+  letter-spacing: -.01rem;
+  font-weight: var(--Extrabold);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: 2.4rem;
+  font-weight: var(--Medium);
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.form {
+  width: 46rem;
+}
+
+.form__row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.4rem;
+}
+
+.form label {
+  font-size: 2rem;
+  font-weight: var(--Medium);
+  color: var(--Neutral-0);
+  line-height: 120%;
+  letter-spacing: -0.05rem;
+  margin-bottom: 1.2rem;
+}
+
+.form input {
+  outline: none;
+  background-color: var(--White-transparent);
+  backdrop-filter: blur(5px);
+  border: .1rem solid var(--Neutral-0);
+  height: 5.4rem;
+  border-radius: 1.2rem;
+  padding: 1.6rem;
+  color: var(--Neutral-0);
+  font-size: 1.8rem;
+  line-height: 120%;
+  font-weight: var(--Regular);
+  font-family: 'Inconsolata';
+}
+
+.form input::placeholder {
+  color: var(--Neutral-300);
+  font-size: 1.8rem;
+  line-height: 120%;
+  font-weight: var(--Regular);
+  font-family: 'Inconsolata';
+}
+
+.button {
+  height: 5.4rem;
+  border-radius: 1.2rem;
+  border: none;
+  background-color: var(--Orange-500);
+  color: var(--Neutral-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 2rem;
+  line-height: 100%;
+  letter-spacing: -.03rem;
+  font-weight: var(--Extrabold);
+  cursor: pointer;
+}
