@@ -17,6 +17,7 @@
 
   
   --White-transparent: hsla(0, 0%, 100%, 8%);
+  --White-transparent-hover: hsla(0, 0%, 100%, 20%);
 
   --Extrabold: 700;
   --Medium: 400;
@@ -92,13 +93,19 @@ body {
   margin-bottom: 2.4rem;
 }
 
-.form label {
+.form label,
+.form__label-file {
   font-size: 2rem;
   font-weight: var(--Medium);
   color: var(--Neutral-0);
   line-height: 120%;
   letter-spacing: -0.05rem;
   margin-bottom: 1.2rem;
+  display: inline-block;
+}
+
+.form .form__custom-file {
+  margin-bottom: 0;
 }
 
 .form input {
@@ -116,12 +123,70 @@ body {
   font-family: 'Inconsolata';
 }
 
+.form__input-file {
+  background-color: var(--White-transparent);
+  backdrop-filter: blur(5px);
+  border: .1rem dashed var(--Neutral-0);
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.9rem;
+  gap: 1.6rem;
+  cursor: pointer;
+}
+
+.form input:hover,
+.form__input-file:hover {
+  background-color: var(--White-transparent-hover);
+}
+
+.form input:focus,
+.form input:focus ~ .form__custom-file .form__input-file,
+.button:focus {
+  outline: 1.5px solid var(--Neutral-0);
+  outline-offset: 3px;
+}
+
+.form input.error,
+.form input.error ~ .form__custom-file .form__input-file {
+  border: .1rem solid var(--Orange-500);
+}
+
+.form__input-file figure {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.2rem;
+  border: .1rem solid var(--Neutral-700);
+  background-color: var(--White-transparent);
+  backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__text-file {
+  color: var(--Neutral-300);
+  font-size: 1.8rem;
+  line-height: 120%;
+  font-weight: var(--Regular);
+}
+
 .form input::placeholder {
   color: var(--Neutral-300);
   font-size: 1.8rem;
   line-height: 120%;
   font-weight: var(--Regular);
   font-family: 'Inconsolata';
+}
+
+.form input[type="file"] {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  margin-bottom: 0;
+  padding: 0;
+  border: none;
 }
 
 .button {
@@ -139,4 +204,30 @@ body {
   letter-spacing: -.03rem;
   font-weight: var(--Extrabold);
   cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--Orange-700);
+}
+
+.form__message {
+  font-size: 1.2rem;
+  line-height: 120%;
+  letter-spacing: -.02rem;
+  font-weight: var(--Regular);
+  padding-top: 1.2rem;
+}
+
+.form__message--help {
+  color: var(--Neutral-300);
+}
+
+.form__message--error {
+  color: var(--Orange-500);
+  display: none;
+}
+
+.form input.error ~ .form__message--error,
+.form input.error ~ .form__message--error {
+  display: inline-block;
 }
