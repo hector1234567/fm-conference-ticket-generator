@@ -28,42 +28,40 @@
       </p>
       <form action="/generated-ticket.html" method="get" class="form">
         <div class="form__row">
-          <input
-            type="file"
-            name="avatar"
-            id="avatar"
-            required
-          />
+          <input type="file" name="avatar" id="avatar" />
           <label for="avatar" class="form__custom-file">
             <span class="form__label-file">Upload Avatar</span>
             <div class="form__input-file">
               <figure>
-                <img src="assets/images/icon-upload.svg" alt="Upload">
+                <img src="assets/images/icon-upload.svg" alt="Upload" />
               </figure>
-              <span class="form__text-file">Drag and drop or click to upload</span>
+              <span class="form__text-file"
+                >Drag and drop or click to upload</span
+              >
             </div>
           </label>
           <span class="form__message form__message--help"
             >&#9432; Upload your photo (JPG or PNG, max size: 500KB).</span
           >
-          <span class="form__message form__message--error"
+          <span
+            class="form__message form__message--error form__message--maxsize hidden"
             >&#9432; File too large. Please upload a photo under 500KB.</span
           >
         </div>
         <div class="form__row">
           <label for="fullname">Full Name</label>
-          <input type="text" name="fullname" id="fullname" required/>
+          <input type="text" name="fullname" id="fullname" />
         </div>
         <div class="form__row">
           <label for="email">Email Address</label>
           <input
-            type="email"
+            type="text"
             name="email"
             id="email"
             placeholder="example@email.com"
-            required
           />
-          <span class="form__message form__message--error"
+          <span
+            class="form__message form__message--error form__message--wrongEmail hidden"
             >&#9432; Please enter a valid email address.</span
           >
         </div>
@@ -74,11 +72,11 @@
             name="github-username"
             id="github-username"
             placeholder="@yourusername"
-            required
           />
         </div>
         <button class="button" type="submit">Generate My Ticket</button>
       </form>
     </main>
+    <script src="index.js"></script>
   </body>
 </html>

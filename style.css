@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Inconsolata';
-  src: url(assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf);
+  font-family: "Inconsolata";
+  src: url(assets/fonts/Inconsolata-VariableFont_wdth_wght.ttf);
 }
 
 :root {
@@ -13,13 +13,13 @@
   --Orange-500: hsl(7, 88%, 67%);
   --Orange-700: hsl(7, 71%, 60%);
 
-  --Gradient: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
+  --Gradient: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
 
-  
   --White-transparent: hsla(0, 0%, 100%, 8%);
   --White-transparent-hover: hsla(0, 0%, 100%, 20%);
 
   --Extrabold: 700;
+  --Bold: 700;
   --Medium: 400;
   --Regular: 300;
 }
@@ -37,20 +37,26 @@ html {
 }
 
 body {
-  font-family: 'Inconsolata', sans-serif;
+  font-family: "Inconsolata", sans-serif;
   font-size: 2rem;
   color: var(--Neutral-300);
   background-color: var(--Neutral-900);
-  background-image: url(assets/images/pattern-squiggly-line-bottom-desktop.svg), url(assets/images/pattern-squiggly-line-top.svg), url(assets/images/background-desktop.png);
-  background-size:  auto, auto, cover;
+  background-image: url(assets/images/pattern-squiggly-line-bottom-desktop.svg),
+    url(assets/images/pattern-squiggly-line-top.svg),
+    url(assets/images/background-desktop.png);
+  background-size: auto, auto, cover;
   background-repeat: no-repeat;
-  background-position: left bottom, right top 13%, center ;
+  background-position: left bottom, right top 13%, center;
   min-height: 100dvh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 4rem;
+}
+
+.hidden {
+  display: none;
 }
 
 .header {
@@ -68,7 +74,7 @@ body {
   color: var(--Neutral-0);
   font-size: 6rem;
   line-height: 110%;
-  letter-spacing: -.01rem;
+  letter-spacing: -0.01rem;
   font-weight: var(--Extrabold);
   text-align: center;
   margin-bottom: 2rem;
@@ -112,7 +118,7 @@ body {
   outline: none;
   background-color: var(--White-transparent);
   backdrop-filter: blur(5px);
-  border: .1rem solid var(--Neutral-0);
+  border: 0.1rem solid var(--Neutral-0);
   height: 5.4rem;
   border-radius: 1.2rem;
   padding: 1.6rem;
@@ -120,20 +126,19 @@ body {
   font-size: 1.8rem;
   line-height: 120%;
   font-weight: var(--Regular);
-  font-family: 'Inconsolata';
+  font-family: "Inconsolata";
 }
 
 .form__input-file {
   background-color: var(--White-transparent);
   backdrop-filter: blur(5px);
-  border: .1rem dashed var(--Neutral-0);
+  border: 0.1rem dashed var(--Neutral-0);
   border-radius: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1.9rem;
   gap: 1.6rem;
-  cursor: pointer;
 }
 
 .form input:hover,
@@ -150,19 +155,52 @@ body {
 
 .form input.error,
 .form input.error ~ .form__custom-file .form__input-file {
-  border: .1rem solid var(--Orange-500);
+  border: 0.1rem solid var(--Orange-500);
 }
 
 .form__input-file figure {
   width: 5rem;
   height: 5rem;
   border-radius: 1.2rem;
-  border: .1rem solid var(--Neutral-700);
+  border: 0.1rem solid var(--Neutral-700);
   background-color: var(--White-transparent);
   backdrop-filter: blur(24px);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.form__preview-file {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.2rem;
+  border: 0.1rem solid var(--Neutral-700);
+  background-size: cover;
+  background-position: center;
+}
+
+.form__buttons-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.form__buttons-file span {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  background-color: var(--White-transparent);
+  backdrop-filter: blur(24px);
+  color: var(--Neutral-0);
+  font-size: 1.2rem;
+  font-weight: var(--Regular);
+  line-height: 120%;
+  letter-spacing: -0.02rem;
+  cursor: pointer;
+}
+
+.form__buttons-file span:hover {
+  text-decoration: underline;
 }
 
 .form__text-file {
@@ -177,7 +215,7 @@ body {
   font-size: 1.8rem;
   line-height: 120%;
   font-weight: var(--Regular);
-  font-family: 'Inconsolata';
+  font-family: "Inconsolata";
 }
 
 .form input[type="file"] {
@@ -201,7 +239,7 @@ body {
   width: 100%;
   font-size: 2rem;
   line-height: 100%;
-  letter-spacing: -.03rem;
+  letter-spacing: -0.03rem;
   font-weight: var(--Extrabold);
   cursor: pointer;
 }
@@ -213,7 +251,7 @@ body {
 .form__message {
   font-size: 1.2rem;
   line-height: 120%;
-  letter-spacing: -.02rem;
+  letter-spacing: -0.02rem;
   font-weight: var(--Regular);
   padding-top: 1.2rem;
 }
@@ -224,10 +262,129 @@ body {
 
 .form__message--error {
   color: var(--Orange-500);
+}
+
+/* .form input.error ~ .form__message--help {
   display: none;
 }
 
-.form input.error ~ .form__message--error,
 .form input.error ~ .form__message--error {
   display: inline-block;
+} */
+
+/* Ticket Page */
+
+.heading strong {
+  background-image: var(--Gradient);
+  background-clip: text;
+  color: transparent;
+  font-weight: inherit;
+}
+
+.text {
+  max-width: 51.4rem;
+}
+
+.text strong {
+  font-weight: inherit;
+  color: var(--Orange-500);
+}
+
+.ticket {
+  width: 60rem;
+  height: 28rem;
+  background-image: url(assets/images/pattern-ticket.svg);
+  background-size: cover;
+  padding: 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ticket__data {
+  display: grid;
+  grid-template-columns: min-content auto;
+  row-gap: 1.2rem;
+  column-gap: 2rem;
+}
+
+.ticket__heading {
+  font-size: 4rem;
+  font-weight: var(--Bold);
+  line-height: 110%;
+  letter-spacing: -0.1rem;
+  color: var(--Neutral-0);
+}
+
+.ticket__date {
+  font-size: 1.8rem;
+  line-height: 120%;
+  color: var(--Neutral-300);
+  grid-column: 2 / 3;
+}
+
+.ticket__id {
+  position: absolute;
+  right: 0;
+  top: 45%;
+  transform: rotateZ(90deg);
+  color: var(--Neutral-500);
+  font-size: 3rem;
+  font-weight: var(--Medium);
+  line-height: 110%;
+  letter-spacing: -0.1rem;
+}
+
+.ticket__user-data {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.ticket__user-data figure {
+  width: 8rem;
+  height: 8rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 1.2rem;
+}
+
+.ticket__user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.ticket__user-heading {
+  font-size: 3rem;
+  font-weight: var(--Medium);
+  line-height: 110%;
+  letter-spacing: -0.01rem;
+}
+
+.ticket__user-links a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1106px) {
+  body {
+    background-size: 44rem, 30rem, auto;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: 442px) {
+  html {
+    font-size: 45%;
+  }
+
+  body {
+    background-size: 30rem, 30rem, auto;
+  }
 }
