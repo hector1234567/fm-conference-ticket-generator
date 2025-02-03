@@ -2,6 +2,9 @@ const userData = document.querySelector(".ticket__user-data");
 
 let params = new URLSearchParams(document.location.search);
 
+document.querySelector(".heading strong").innerHTML = params.get("fullname");
+document.querySelector(".text strong").innerHTML = params.get("email");
+
 userData.innerHTML = `
     <figure  style="background-image: url(${sessionStorage.getItem(
       "avatar"
