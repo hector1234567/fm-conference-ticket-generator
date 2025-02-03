@@ -6,7 +6,7 @@
 :root {
   --Neutral-0: hsl(0, 0%, 100%);
   --Neutral-300: hsl(252, 6%, 83%);
-  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-500: rgb(135, 132, 164);
   --Neutral-700: hsl(245, 19%, 35%);
   --Neutral-900: hsl(248, 70%, 10%);
 
@@ -133,13 +133,18 @@ body {
 .form__input-file {
   background-color: var(--White-transparent);
   backdrop-filter: blur(5px);
-  border: 0.1rem dashed var(--Neutral-500);
-  border-radius: 1.2rem;
+  /* border: 0.1rem dashed var(--Neutral-500); */
+  /* border-radius: 1.2rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1.9rem;
   gap: 1.6rem;
+
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-repeat: round;
+  border-image-source: url("data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2222%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%200%20H%206%20V%201%20H%201%20V%206%20H%200%20V%200%22%20fill%3D%22rgb(135%2C132%2C164)%22%20%2F%3E%3Cpath%20d%3D%22M22%200%20V%206%20H%2021%20V%201%20H%2016%20V%200%20H%2022%22%20fill%3D%22rgb(135%2C132%2C164)%22%20%2F%3E%3Cpath%20d%3D%22M22%2022%20H%2016%20V%2021%20H%2021%20V%2016%20H%2022%20V%2022%22%20fill%3D%22rgb(135%2C132%2C164)%22%20%2F%3E%3Cpath%20d%3D%22M0%2022%20V%2016%20H%201%20V%2021%20H%206%20V%2022%20H%200%22%20fill%3D%22rgb(135%2C132%2C164)%22%20%2F%3E%3C%2Fsvg%3E");
 }
 
 .form input:hover,
