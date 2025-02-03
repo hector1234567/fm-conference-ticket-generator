@@ -386,6 +386,40 @@ body {
   }
 }
 
+@media screen and (max-width: 657px) {
+  .ticket {
+    width: 43rem;
+    height: 20rem;
+  }
+
+  .ticket__heading {
+    font-size: 3rem;
+  }
+
+  .ticket__date {
+    font-size: 1.4rem;
+  }
+
+  .ticket__user-data figure {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .ticket__user-info {
+    gap: 0;
+  }
+
+  .ticket__data {
+    row-gap: 0;
+    column-gap: 2rem;
+  }
+
+  .ticket__data img {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
+
 @media screen and (max-width: 512px) {
   html {
     font-size: 55%;
