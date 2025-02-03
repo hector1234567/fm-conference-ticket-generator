@@ -18,7 +18,7 @@
   --White-transparent: hsla(0, 0%, 100%, 8%);
   --White-transparent-hover: hsla(0, 0%, 100%, 20%);
 
-  --Extrabold: 700;
+  --Extrabold: 800;
   --Bold: 700;
   --Medium: 400;
   --Regular: 300;
@@ -212,7 +212,7 @@ body {
 }
 
 .form input::placeholder {
-  color: var(--Neutral-300);
+  color: var(--Neutral-500);
   font-size: 1.8rem;
   line-height: 120%;
   font-weight: var(--Regular);
@@ -237,10 +237,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: inherit;
   width: 100%;
   font-size: 2rem;
   line-height: 100%;
-  letter-spacing: -0.03rem;
   font-weight: var(--Extrabold);
   cursor: pointer;
 }
